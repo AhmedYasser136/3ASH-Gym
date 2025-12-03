@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3ASH Gym - Men's fitness center with professional training facilities">
+    <title>3ASH Gym - Men's Fitness Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="gym-name">3ASH GYM</h1>
+            <p class="tagline">Men's Fitness Center</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h2>Welcome to 3ASH Gym</h2>
+                <p>Your journey to fitness starts here</p>
+            </div>
+        </section>
+
+        <!-- Working Hours Section -->
+        <section class="hours-section">
+            <div class="container">
+                <h2 class="section-title">Working Hours</h2>
+                <div class="hours-grid">
+                    <div class="day-card">
+                        <h3>Wednesday</h3>
+                        <p class="time">12:00 PM - 1:00 AM</p>
+                    </div>
+                    <div class="day-card">
+                        <h3>Thursday</h3>
+                        <p class="time">12:00 PM - 1:00 AM</p>
+                    </div>
+                    <div class="day-card special">
+                        <h3>Friday</h3>
+                        <p class="time">4:00 AM - 10:00 PM</p>
+                    </div>
+                    <div class="day-card">
+                        <h3>Saturday</h3>
+                        <p class="time">12:00 PM - 1:00 AM</p>
+                    </div>
+                    <div class="day-card">
+                        <h3>Sunday</h3>
+                        <p class="time">12:00 PM - 1:00 AM</p>
+                    </div>
+                    <div class="day-card">
+                        <h3>Monday</h3>
+                        <p class="time">12:00 PM - 1:00 AM</p>
+                    </div>
+                    <div class="day-card">
+                        <h3>Tuesday</h3>
+                        <p class="time">12:00 PM - 1:00 AM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-card whatsapp-card" onclick="openWhatsApp('+201122897623')">
+                        <div class="icon"><i class="fab fa-whatsapp"></i></div>
+                        <h3>WhatsApp</h3>
+                        <p class="phone">+20 11 22897623</p>
+                        <span class="click-hint">Click to chat</span>
+                    </div>
+                    <div class="contact-card whatsapp-card" onclick="openWhatsApp('+201129629650')">
+                        <div class="icon"><i class="fab fa-whatsapp"></i></div>
+                        <h3>WhatsApp</h3>
+                        <p class="phone">+20 11 29629650</p>
+                        <span class="click-hint">Click to chat</span>
+                    </div>
+                    <div class="contact-card facebook-card" onclick="openFacebook()">
+                        <div class="icon"><i class="fab fa-facebook"></i></div>
+                        <h3>Facebook</h3>
+                        <p>Follow us on social media</p>
+                        <span class="click-hint">Visit page</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section class="location-section">
+            <div class="container">
+                <h2 class="section-title">Find Us</h2>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3456.123456789!2d31.317161009985586!3d29.995920526335077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDU5JzQ1LjMiTiAzMcKwMTknMDEuOCJF!5e0!3m2!1sen!2seg!4v1234567890"
+                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <a href="https://maps.app.goo.gl/iEvaD2J3pTZgZ3eJ6" target="_blank" class="map-link">
+                        Open in Google Maps
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Banner -->
+        <section class="info-banner">
+            <div class="container">
+                <div class="info-badge">
+                    <span class="badge-icon"><i class="fas fa-male"></i></span>
+                    <span class="badge-text">Men Only</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 3ASH Gym. All rights reserved.</p>
+            <p class="footer-tagline">Building Stronger Bodies, Building Stronger Men</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
