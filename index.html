@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -14,8 +14,12 @@
 <body>
     <header class="header">
         <div class="container">
+            <button id="langToggle" class="lang-toggle" onclick="toggleLanguage()">
+                <i class="fas fa-language"></i>
+                <span class="lang-text">العربية</span>
+            </button>
             <h1 class="gym-name">3ASH GYM</h1>
-            <p class="tagline">Men's Fitness Center</p>
+            <p class="tagline" data-en="Men's Fitness Center" data-ar="مركز لياقة بدنية للرجال">Men's Fitness Center</p>
         </div>
     </header>
 
@@ -23,42 +27,42 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="container">
-                <h2>Welcome to 3ASH Gym</h2>
-                <p>Your journey to fitness starts here</p>
+                <h2 data-en="Welcome to 3ASH Gym" data-ar="مرحباً بكم في 3ASH Gym">Welcome to 3ASH Gym</h2>
+                <p data-en="Your journey to fitness starts here" data-ar="رحلتك نحو اللياقة تبدأ من هنا">Your journey to fitness starts here</p>
             </div>
         </section>
 
         <!-- Working Hours Section -->
         <section class="hours-section">
             <div class="container">
-                <h2 class="section-title">Working Hours</h2>
+                <h2 class="section-title" data-en="Working Hours" data-ar="مواعيد العمل">Working Hours</h2>
                 <div class="hours-grid">
                     <div class="day-card">
-                        <h3>Wednesday</h3>
+                        <h3 data-en="Wednesday" data-ar="الأربعاء">Wednesday</h3>
                         <p class="time">12:00 PM - 1:00 AM</p>
                     </div>
                     <div class="day-card">
-                        <h3>Thursday</h3>
+                        <h3 data-en="Thursday" data-ar="الخميس">Thursday</h3>
                         <p class="time">12:00 PM - 1:00 AM</p>
                     </div>
                     <div class="day-card special">
-                        <h3>Friday</h3>
+                        <h3 data-en="Friday" data-ar="الجمعة">Friday</h3>
                         <p class="time">4:00 AM - 10:00 PM</p>
                     </div>
                     <div class="day-card">
-                        <h3>Saturday</h3>
+                        <h3 data-en="Saturday" data-ar="السبت">Saturday</h3>
                         <p class="time">12:00 PM - 1:00 AM</p>
                     </div>
                     <div class="day-card">
-                        <h3>Sunday</h3>
+                        <h3 data-en="Sunday" data-ar="الأحد">Sunday</h3>
                         <p class="time">12:00 PM - 1:00 AM</p>
                     </div>
                     <div class="day-card">
-                        <h3>Monday</h3>
+                        <h3 data-en="Monday" data-ar="الإثنين">Monday</h3>
                         <p class="time">12:00 PM - 1:00 AM</p>
                     </div>
                     <div class="day-card">
-                        <h3>Tuesday</h3>
+                        <h3 data-en="Tuesday" data-ar="الثلاثاء">Tuesday</h3>
                         <p class="time">12:00 PM - 1:00 AM</p>
                     </div>
                 </div>
@@ -68,25 +72,25 @@
         <!-- Contact Section -->
         <section class="contact-section">
             <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
+                <h2 class="section-title" data-en="Get In Touch" data-ar="تواصل معنا">Get In Touch</h2>
                 <div class="contact-grid">
-                    <div class="contact-card whatsapp-card" onclick="openWhatsApp('+201122897623')">
+                    <div class="contact-card whatsapp-card" onclick="openWhatsApp('+201122897623', event)">
                         <div class="icon"><i class="fab fa-whatsapp"></i></div>
                         <h3>WhatsApp</h3>
-                        <p class="phone">+20 11 22897623</p>
-                        <span class="click-hint">Click to chat</span>
+                        <p class="phone">chat us on WhatsApp</p>
+                        <span class="click-hint" data-en="Click to chat" data-ar="اضغط للمحادثة">Click to chat</span>
                     </div>
-                    <div class="contact-card whatsapp-card" onclick="openWhatsApp('+201129629650')">
+                    <div class="contact-card whatsapp-card" onclick="openWhatsApp('+201129629650', event)">
                         <div class="icon"><i class="fab fa-whatsapp"></i></div>
                         <h3>WhatsApp</h3>
-                        <p class="phone">+20 11 29629650</p>
-                        <span class="click-hint">Click to chat</span>
+                        <p class="phone">chat us on WhatsApp</p>
+                        <span class="click-hint" data-en="Click to chat" data-ar="اضغط للمحادثة">Click to chat</span>
                     </div>
-                    <div class="contact-card facebook-card" onclick="openFacebook()">
+                    <div class="contact-card facebook-card" onclick="openFacebook(event)">
                         <div class="icon"><i class="fab fa-facebook"></i></div>
                         <h3>Facebook</h3>
-                        <p>Follow us on social media</p>
-                        <span class="click-hint">Visit page</span>
+                        <p data-en="Follow us on social media" data-ar="تابعنا على مواقع التواصل">Follow us on social media</p>
+                        <span class="click-hint" data-en="Visit page" data-ar="زيارة الصفحة">Visit page</span>
                     </div>
                 </div>
             </div>
@@ -95,14 +99,14 @@
         <!-- Location Section -->
         <section class="location-section">
             <div class="container">
-                <h2 class="section-title">Find Us</h2>
+                <h2 class="section-title" data-en="Find Us" data-ar="موقعنا">Find Us</h2>
                 <div class="map-container">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3456.123456789!2d31.317161009985586!3d29.995920526335077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDU5JzQ1LjMiTiAzMcKwMTknMDEuOCJF!5e0!3m2!1sen!2seg!4v1234567890"
                         width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
-                    <a href="https://maps.app.goo.gl/iEvaD2J3pTZgZ3eJ6" target="_blank" class="map-link">
+                    <a href="https://maps.app.goo.gl/iEvaD2J3pTZgZ3eJ6" target="_blank" class="map-link" data-en="Open in Google Maps" data-ar="فتح في خرائط جوجل">
                         Open in Google Maps
                     </a>
                 </div>
@@ -114,7 +118,7 @@
             <div class="container">
                 <div class="info-badge">
                     <span class="badge-icon"><i class="fas fa-male"></i></span>
-                    <span class="badge-text">Men Only</span>
+                    <span class="badge-text" data-en="Men Only" data-ar="للرجال فقط">Men Only</span>
                 </div>
             </div>
         </section>
@@ -122,8 +126,8 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 3ASH Gym. All rights reserved.</p>
-            <p class="footer-tagline">Building Stronger Bodies, Building Stronger Men</p>
+            <p data-en="&copy; 2024 3ASH Gym. All rights reserved." data-ar="&copy; 2024 3ASH Gym. جميع الحقوق محفوظة.">&copy; 2024 3ASH Gym. All rights reserved.</p>
+            <p class="footer-tagline" data-en="Building Stronger Bodies, Building Stronger Men" data-ar="بناء أجسام أقوى، بناء رجال أقوى">Building Stronger Bodies, Building Stronger Men</p>
         </div>
     </footer>
 

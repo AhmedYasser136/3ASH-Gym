@@ -1,7 +1,57 @@
 // Interactive JavaScript for 3ASH Gym Website
 
+// Language Management
+let currentLanguage = localStorage.getItem('language') || 'en';
+
+// Function to toggle language
+function toggleLanguage() {
+    currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+    localStorage.setItem('language', currentLanguage);
+    updateLanguage();
+}
+
+// Function to update all text based on current language
+function updateLanguage() {
+    const html = document.documentElement;
+    const langToggleBtn = document.querySelector('.lang-text');
+
+    // Update HTML attributes
+    html.setAttribute('lang', currentLanguage);
+    html.setAttribute('dir', currentLanguage === 'ar' ? 'rtl' : 'ltr');
+
+    // Update toggle button text
+    if (langToggleBtn) {
+        langToggleBtn.textContent = currentLanguage === 'en' ? 'العربية' : 'English';
+    }
+
+    // Update all elements with data-en and data-ar attributes
+    const elements = document.querySelectorAll('[data-en][data-ar]');
+    elements.forEach(element => {
+        const text = element.getAttribute(`data-${currentLanguage}`);
+        if (text) {
+            // For HTML content (like &copy;)
+            if (text.includes('&')) {
+                element.innerHTML = text;
+            } else {
+                element.textContent = text;
+            }
+        }
+    });
+
+    // Update "Today" badge if exists
+    updateTodayBadge();
+}
+
+// Function to update "Today" badge based on language
+function updateTodayBadge() {
+    const todayBadge = document.querySelector('.day-card span');
+    if (todayBadge && todayBadge.textContent.includes('TODAY')) {
+        todayBadge.textContent = currentLanguage === 'ar' ? 'اليوم' : 'TODAY';
+    }
+}
+
 // Function to open WhatsApp chat
-function openWhatsApp(phoneNumber) {
+function openWhatsApp(phoneNumber, event) {
     // Remove spaces and format the phone number
     const cleanNumber = phoneNumber.replace(/\s+/g, '');
 
@@ -12,30 +62,37 @@ function openWhatsApp(phoneNumber) {
     window.open(whatsappURL, '_blank');
 
     // Add visual feedback
-    const clickedCard = event.currentTarget;
-    clickedCard.style.transform = 'scale(0.95)';
-    setTimeout(() => {
-        clickedCard.style.transform = '';
-    }, 200);
+    if (event && event.currentTarget) {
+        const clickedCard = event.currentTarget;
+        clickedCard.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            clickedCard.style.transform = '';
+        }, 200);
+    }
 }
 
 // Function to open Facebook page
-function openFacebook() {
+function openFacebook(event) {
     const facebookURL = 'https://www.facebook.com/3ashGym';
 
     // Open in new tab
     window.open(facebookURL, '_blank');
 
     // Add visual feedback
-    const clickedCard = event.currentTarget;
-    clickedCard.style.transform = 'scale(0.95)';
-    setTimeout(() => {
-        clickedCard.style.transform = '';
-    }, 200);
+    if (event && event.currentTarget) {
+        const clickedCard = event.currentTarget;
+        clickedCard.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            clickedCard.style.transform = '';
+        }, 200);
+    }
 }
 
 // Smooth scroll functionality for internal links
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize language on page load
+    updateLanguage();
+
     // Add smooth scrolling to all links
     const links = document.querySelectorAll('a[href^="#"]');
 
