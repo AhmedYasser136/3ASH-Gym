@@ -196,6 +196,4 @@ if (isMobileDevice()) {
     });
 }
 
-// Log page load for debugging
-console.log('3ASH Gym website loaded successfully');
-console.log('Interactive features enabled: WhatsApp links, Facebook link, Map navigation');
+// Website loaded successfully - all interactive features enabled
