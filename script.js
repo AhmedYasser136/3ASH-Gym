@@ -21,7 +21,7 @@ function updateLanguage() {
 
     // Update toggle button text
     if (langToggleBtn) {
-        langToggleBtn.textContent = currentLanguage === 'en' ? 'العربية' : 'English';
+        langToggleBtn.textContent = currentLanguage === 'en' ? '' : '';
     }
 
     // Update all elements with data-en and data-ar attributes
