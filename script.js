@@ -44,8 +44,8 @@ function updateLanguage() {
 
 // Function to update "Today" badge based on language
 function updateTodayBadge() {
-    const todayBadge = document.querySelector('.day-card span');
-    if (todayBadge && todayBadge.textContent.includes('TODAY')) {
+    const todayBadge = document.querySelector('.today-badge');
+    if (todayBadge) {
         todayBadge.textContent = currentLanguage === 'ar' ? 'اليوم' : 'TODAY';
     }
 }
@@ -151,27 +151,35 @@ function highlightCurrentDay() {
     const dayCards = document.querySelectorAll('.day-card');
 
     dayCards.forEach(card => {
-        const dayName = card.querySelector('h3').textContent;
+        const dayHeading = card.querySelector('h3');
+        const dayNameEn = dayHeading.getAttribute('data-en');
 
-        if (dayName === today) {
+        // Check if this is today's card
+        if (dayNameEn === today) {
             card.style.border = '3px solid var(--primary-color)';
             card.style.boxShadow = '0 8px 16px rgba(255, 107, 53, 0.3)';
 
-            // Add a "Today" badge
-            const badge = document.createElement('span');
-            badge.textContent = 'TODAY';
-            badge.style.cssText = `
-                display: inline-block;
-                background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-                color: white;
-                padding: 4px 12px;
-                border-radius: 12px;
-                font-size: 0.75rem;
-                font-weight: bold;
-                margin-top: 8px;
-                letter-spacing: 1px;
-            `;
-            card.appendChild(badge);
+            // Check if badge already exists
+            let badge = card.querySelector('.today-badge');
+            if (!badge) {
+                // Add a "Today" badge
+                badge = document.createElement('span');
+                badge.className = 'today-badge';
+                badge.style.cssText = `
+                    display: inline-block;
+                    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+                    color: white;
+                    padding: 4px 12px;
+                    border-radius: 12px;
+                    font-size: 0.75rem;
+                    font-weight: bold;
+                    margin-top: 8px;
+                    letter-spacing: 1px;
+                `;
+                card.appendChild(badge);
+            }
+            // Update badge text based on current language
+            badge.textContent = currentLanguage === 'ar' ? 'اليوم' : 'TODAY';
         }
     });
 }
